@@ -25,6 +25,10 @@
   switch_to_tab_2 = <Primary>w
   switch_to_tab_3 = <Primary>e
   switch_to_tab_10 = <Alt>r
+  resize_left = <Primary><Shift>h
+  resize_right = <Primary><Shift>l
+  resize_down = <Primary><Shift>j
+  resize_up = <Primary><Shift>k
 [profiles]
   [[default]]
     icon_bell = False
