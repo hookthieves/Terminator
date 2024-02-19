@@ -1,11 +1,9 @@
 [global_config]
   window_state = maximise
   borderless = True
-  tab_position = hidden
   scroll_tabbar = True
-  homogeneous_tabbar = False
+  sticky = True
   suppress_multiple_term_dialog = True
-  title_use_system_font = False
 [keybindings]
   zoom_in = <Primary>equal
   zoom_out = <Primary>minus
@@ -14,31 +12,34 @@
   cycle_prev = <Primary>s
   go_next = <Primary>d
   go_prev = <Primary>s
-  go_up = <Primary>k
-  go_down = <Primary>j
-  go_left = <Primary>h
-  go_right = <Primary>l
   split_horiz = <Primary>s
   split_vert = <Primary>d
+  resize_up = <Primary><Shift>Up
+  resize_down = <Primary><Shift>Down
+  resize_left = <Primary><Shift>Left
+  resize_right = <Primary><Shift>Right
   toggle_zoom = <Primary>a
   switch_to_tab_1 = <Primary>q
   switch_to_tab_2 = <Primary>w
   switch_to_tab_3 = <Primary>e
   switch_to_tab_10 = <Alt>r
-  resize_left = <Primary><Shift>h
-  resize_right = <Primary><Shift>l
-  resize_down = <Primary><Shift>j
-  resize_up = <Primary><Shift>k
 [profiles]
   [[default]]
-    icon_bell = False
+    background_color = "#002b36"
     background_darkness = 0.95
-    cursor_color = "#aaaaaa"
+    background_type = transparent
+    cursor_blink = False
+    cursor_fg_color = "#000000"
+    cursor_bg_color = "#aaaaaa"
+    cursor_color_default = False
     font = Hack Bold 13
-    show_titlebar = False
+    foreground_color = "#839496"
     scrollbar_position = hidden
     scrollback_infinite = True
-    use_system_font = False
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    use_theme_colors = True
+    title_transmit_bg_color = "#3584e4"
+    title_use_system_font = False
 [layouts]
   [[default]]
     [[[window0]]]
@@ -48,3 +49,4 @@
       type = Terminal
       parent = window0
 [plugins]
+   
