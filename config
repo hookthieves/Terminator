@@ -1,4 +1,7 @@
 [global_config]
+  window_state = maximise
+  borderless = True
+  inactive_color_offset = 0.5185185185185185
 [keybindings]
   zoom_in = <Primary>equal
   zoom_out = <Primary>minus
@@ -11,9 +14,8 @@
   [[default]]
     background_darkness = 0.95
     palette = "#1f2229:#d41919:#5ebdab:#fea44c:#367bf0:#9755b3:#49aee6:#e6e6e6:#198388:#ec0101:#47d4b9:#ff8a18:#277fff:#962ac3:#05a1f7:#ffffff"
-    use_theme_colors = True
     title_transmit_fg_color = "#000000"
-    title_transmit_bg_color = "#f6d32d"
+    title_transmit_bg_color = "#e01b24"
 [layouts]
   [[default]]
     [[[window0]]]
