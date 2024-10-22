@@ -1,6 +1,4 @@
 [global_config]
-  window_state = maximise
-  borderless = True
   inactive_color_offset = 0.5185185185185185
 [keybindings]
   zoom_in = <Primary>equal
@@ -12,10 +10,16 @@
   scaled_zoom = <Primary>a
 [profiles]
   [[default]]
+    icon_bell = False
     background_darkness = 0.95
-    palette = "#1f2229:#d41919:#5ebdab:#fea44c:#367bf0:#9755b3:#49aee6:#e6e6e6:#198388:#ec0101:#47d4b9:#ff8a18:#277fff:#962ac3:#05a1f7:#ffffff"
+    font = 0xProto Nerd Font Propo 10
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#000000:#3d3846:#3d3846:#5e5c64:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#5e5c64:#3d3846:#5e5c64:#729fcf:#ad7fa8:#5e5c64:#eeeeec"
+    use_system_font = False
     title_transmit_fg_color = "#000000"
-    title_transmit_bg_color = "#e01b24"
+    title_transmit_bg_color = "#c01c28"
+    title_use_system_font = False
 [layouts]
   [[default]]
     [[[window0]]]
